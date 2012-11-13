@@ -1,0 +1,68 @@
+@import 'compass/reset';
+@import 'compass/css3';
+@import 'compass/typography/lists';
+@import 'susy';
+
+.page {
+  @include container;
+
+  // header and footer are full-width by default.
+  header, footer { clear: both; }
+
+  // nav spans 3 columns of total 12.
+  nav { @include span-columns(12 omega,12); }
+
+  .content {
+    // content spans the final (omega) 9 columns of 12.
+    @include span-columns(8 ,12);
+  }
+}
+
+$primary: #4D8448;
+$primary: #5DD544;
+
+.title-fonts { font-family: "Francois One", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+.h-fonts {
+  //font-family: "Oswald", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  //font-family: "Droid Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Oswald", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+body {
+  font-family: "Droid Serif", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Droid Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Lora", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #333;
+  background: #fefefe;
+  margin-bottom:36px;
+}
+
+p { font-size: 16px; line-height: 24px; padding-bottom:12px}
+a {
+  font-size: 12px; line-height: 18px; color: #333;
+  &:link, &:visited { text-decoration: none; }
+  &:hover, &:active { color: $primary; }
+  &.current { font-weight: bold; }
+}
+
+h1 { @extend .title-fonts; font-size: 36px; line-height: 60px; margin-top:6px; border-bottom: 1px solid #efefef; color:#444; padding: 0 18px;}
+h2 { @extend .h-fonts; font-size: 24px; line-height: 24px; margin-bottom:24px; }
+h3 { @extend .h-fonts; }
+
+ul.nav {
+  @include horizontal-list;
+  font-size: 18px; line-height:30px;
+  margin-bottom:60px;
+  li {
+    //border-right: 1px solid #e3e3e3;
+    a { padding: 0 18px;}
+  }
+}
+
+footer {
+  @include opacity(0.7);
+  border-bottom: 12px solid $primary;
+  position: fixed;
+  bottom:0;
+  width:100%;
+}

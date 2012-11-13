@@ -1,4 +1,7 @@
 UiIdeas::Application.routes.draw do
+
+  root to: 'pages#blog'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
